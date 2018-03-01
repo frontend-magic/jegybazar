@@ -11,6 +11,8 @@ import {EventListComponent} from './event-list/event-list.component';
 import {EventDetailComponent} from './event-detail/event-detail.component';
 import {ProfileComponent} from './profile/profile.component';
 import {ProfileEditComponent} from './profile-edit/profile-edit.component';
+import {TicketListComponent} from './ticket-list/ticket-list.component';
+import {TicketDetailComponent} from './ticket-detail/ticket-detail.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -28,7 +30,15 @@ const routes: Routes = [
       {path: 'edit', component: ProfileEditComponent}
     ]
   },
-  {path: 'ticket', component: TicketComponent},
+  {
+    path: 'ticket',
+    component: TicketComponent,
+    children: [
+      {path: 'list', component: TicketListComponent},
+      {path: 'new', component: TicketDetailComponent},
+      {path: ':id/bid', component: TicketDetailComponent}
+    ]
+  },
   {path: 'about', component: AboutComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
@@ -48,6 +58,8 @@ export class AppRoutingModule {
     EventListComponent,
     EventDetailComponent,
     TicketComponent,
+    TicketDetailComponent,
+    TicketListComponent,
     AboutComponent,
     LoginComponent,
     ProfileComponent,
