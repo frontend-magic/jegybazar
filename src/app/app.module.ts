@@ -23,6 +23,8 @@ import { TicketDetailComponent } from './ticket/ticket-detail/ticket-detail.comp
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 import { TicketComponent } from './ticket/ticket.component';
 import {AppRoutingModule} from './app-routing.module';
+import {AlertModule} from 'ngx-bootstrap';
+import {EventService} from './shared/event.service';
 
 
 @NgModule({
@@ -37,9 +39,10 @@ import {AppRoutingModule} from './app-routing.module';
   imports: [
     BrowserModule,
     CollapseModule.forRoot(),
+    AlertModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
