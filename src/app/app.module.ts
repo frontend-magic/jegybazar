@@ -39,6 +39,7 @@ import {UserService} from './shared/user.service';
   ],
   imports: [
     BrowserModule,
+    AlertModule.forRoot(),
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
     AppRoutingModule
